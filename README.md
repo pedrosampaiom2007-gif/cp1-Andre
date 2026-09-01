@@ -59,8 +59,13 @@ O notebook está organizado em desafios numerados:
   máximo (50 registros, ~15% do período).
 - **Desafio 5** — um segundo recorte escolhido pela equipe: carga abaixo da média
   (152 registros, ~45% do período), comparado com o recorte de alta demanda.
-- **Desafio 6** — pelo menos dois gráficos com uma interpretação curta.
-- **Desafio 7** — juntar os números calculados numa variável `resumo_resultados`.
+- **Desafio 6** — dois gráficos com interpretação: a série temporal da carga na
+  semana, com o limiar de alta demanda em destaque, e o histograma da
+  distribuição da carga, com média e mediana marcadas.
+- **Desafio 7** — a variável `resumo_resultados` reúne num único texto os
+  indicadores dos desafios anteriores (região, período, nº de registros, mínimo,
+  máximo, média, mediana, limiar e percentual de alta demanda, momento do pico e
+  o resultado do segundo critério), pronta para o relatório.
 
-Os desafios 6 e 7 ainda estão em aberto no notebook.
+Todos os desafios obrigatórios (1 a 7) estão resolvidos no notebook.
 
