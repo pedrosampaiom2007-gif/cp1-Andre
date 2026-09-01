@@ -1,1 +1,86 @@
-# cp1-Andre
+# CP1 — Análise de Dados de Energia
+
+Trabalho da disciplina **Soluções em Energias Renováveis e Sustentáveis**
+(Ciência da Computação). O repositório tem dois notebooks feitos no Google Colab e
+uma pasta `arquivos/` com as amostras `.csv` usadas no primeiro notebook.
+
+## Como foi feito
+
+Os dados vêm de bases públicas de energia (UCI e Kaggle). Cada amostra foi antes
+tratada no **Orange Data Mining** — lá foram selecionadas só as colunas de
+interesse e aplicado um *Data Sampler* para reduzir o volume — e depois a análise
+propriamente dita foi feita em **Python com Pandas** dentro do notebook.
+
+Os dois notebooks rodam no Colab. Basta abrir pelo botão *"Open in Colab"* no topo
+de cada arquivo e subir os `.csv` da pasta `arquivos/` para a sessão (`/content/`)
+antes de executar as células. O `Desafio_Final` também precisa de internet, porque
+consulta uma API pública.
+
+## `CP1_ori.ipynb`
+
+São seis exercícios, todos seguindo a mesma ideia: carregar a amostra, olhar a
+estrutura (`shape`, `head`, `info`, `describe`), renomear as colunas para nomes
+mais claros, definir um limiar como uma porcentagem do valor máximo de uma
+variável (70% na maioria dos casos, 75% nos exercícios 2 e 6), separar os
+registros que ficam acima desse limiar e calcular quantos são e que percentual
+representam. Depois entra um segundo critério — quase sempre uma condição
+ambiental ou operacional — e compara-se o novo recorte com o recorte que só
+considerava o consumo alto.
+
+Os datasets usados, na ordem dos exercícios:
+
+1. Appliances Energy Prediction (UCI) — consumo de eletrodomésticos de uma
+   residência, cruzado com temperatura.
+2. Steel Industry Energy Consumption (UCI) — consumo de uma siderúrgica, cruzado
+   com o fator de potência.
+3. Power Consumption of Tetouan City (UCI) — consumo em três zonas da cidade;
+   escolhe-se a zona de maior pico e cruza-se com a temperatura ambiente.
+4. Solar Power Generation Data (Kaggle) — geração de uma usina fotovoltaica;
+   olha-se a potência CA e a frequência de cada inversor nos momentos de alta
+   geração.
+5. Wind & Solar Energy Production (Kaggle) — produção renovável hora a hora;
+   solar e eólica são comparadas, cada uma contra o seu próprio máximo.
+6. Individual Household Electric Power Consumption (UCI) — monitoramento elétrico
+   de uma casa; potência ativa alta cruzada com corrente acima da média.
+
+## `Desafio_Final_Energia_ONS_API_Final.ipynb`
+
+Análise da carga elétrica do Sistema Interligado Nacional a partir da API pública
+de Carga Verificada do **ONS** (`apicarga.ons.org.br`). Foi usada a área **SP**,
+no período de **01 a 07/08/2025** — 336 medições de meia em meia hora.
+
+O notebook está organizado em desafios numerados:
+
+- **Desafios 1 e 2** — montar o DataFrame a partir do JSON da API, renomear as
+  colunas principais, checar valores ausentes e tipos.
+- **Desafio 3** — indicadores da carga: mínimo, máximo, média, mediana, amplitude
+  e número de medições.
+- **Desafio 4** — períodos de alta demanda, definidos como carga acima de 90% do
+  máximo (50 registros, ~15% do período).
+- **Desafio 5** — um segundo recorte escolhido pela equipe: carga abaixo da média
+  (152 registros, ~45% do período), comparado com o recorte de alta demanda.
+- **Desafio 6** — pelo menos dois gráficos com uma interpretação curta.
+- **Desafio 7** — juntar os números calculados numa variável `resumo_resultados`.
+- **Desafios 8 e 9** — estão na seção marcada como **OPCIONAL**: gerar um relatório
+  técnico com apoio do Gemini e depois fazer a validação crítica desse texto.
+  Precisam da chave `GEMINI_API_KEY` cadastrada nos *Secrets* do Colab.
+
+Os desafios 6 e 7 ainda estão em aberto no notebook.
+
+## Correções aplicadas
+
+- Nomes dos arquivos `.csv` acertados para bater com o que os notebooks leem:
+  removidos os sufixos `(1)`, ` 2` e o ponto duplo de `energydata_SAMPLE..csv`.
+- O exercício 4 lia um arquivo (`SOLAR_ENERGY_DATA.csv`) que não existia; passou a
+  ler `Plant_1_Generation_Data.csv`.
+- `Plant_1_Generation_Data.csv` vinha com duas linhas de metadados do Orange
+  (`continuous` / linha em branco) logo abaixo do cabeçalho, o que fazia o Pandas
+  ler todas as colunas como texto. Essas duas linhas foram removidas do arquivo.
+- Exercício 6: link do dataset corrigido (apontava para a base solar do Kaggle em
+  vez da base *Individual Household* da UCI).
+- `Desafio_Final`: o modelo `gemini-3.6-flash` (que não existe) foi trocado por
+  `gemini-2.0-flash`, e a resposta em texto do Desafio 1 teve `cod_carga`
+  corrigido para `cod_areacarga`.
+
+> Depois das correções, convém abrir cada notebook no Colab e rodar tudo de novo
+> (*Runtime → Run all*) para as saídas salvas ficarem coerentes com o código.
