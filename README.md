@@ -61,26 +61,6 @@ O notebook está organizado em desafios numerados:
   (152 registros, ~45% do período), comparado com o recorte de alta demanda.
 - **Desafio 6** — pelo menos dois gráficos com uma interpretação curta.
 - **Desafio 7** — juntar os números calculados numa variável `resumo_resultados`.
-- **Desafios 8 e 9** — estão na seção marcada como **OPCIONAL**: gerar um relatório
-  técnico com apoio do Gemini e depois fazer a validação crítica desse texto.
-  Precisam da chave `GEMINI_API_KEY` cadastrada nos *Secrets* do Colab.
 
 Os desafios 6 e 7 ainda estão em aberto no notebook.
 
-## Correções aplicadas
-
-- Nomes dos arquivos `.csv` acertados para bater com o que os notebooks leem:
-  removidos os sufixos `(1)`, ` 2` e o ponto duplo de `energydata_SAMPLE..csv`.
-- O exercício 4 lia um arquivo (`SOLAR_ENERGY_DATA.csv`) que não existia; passou a
-  ler `Plant_1_Generation_Data.csv`.
-- `Plant_1_Generation_Data.csv` vinha com duas linhas de metadados do Orange
-  (`continuous` / linha em branco) logo abaixo do cabeçalho, o que fazia o Pandas
-  ler todas as colunas como texto. Essas duas linhas foram removidas do arquivo.
-- Exercício 6: link do dataset corrigido (apontava para a base solar do Kaggle em
-  vez da base *Individual Household* da UCI).
-- `Desafio_Final`: o modelo `gemini-3.6-flash` (que não existe) foi trocado por
-  `gemini-2.0-flash`, e a resposta em texto do Desafio 1 teve `cod_carga`
-  corrigido para `cod_areacarga`.
-
-> Depois das correções, convém abrir cada notebook no Colab e rodar tudo de novo
-> (*Runtime → Run all*) para as saídas salvas ficarem coerentes com o código.
