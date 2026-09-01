@@ -4,6 +4,17 @@ Trabalho da disciplina **Soluções em Energias Renováveis e Sustentáveis**
 (Ciência da Computação). O repositório tem dois notebooks feitos no Google Colab e
 uma pasta `arquivos/` com as amostras `.csv` usadas no primeiro notebook.
 
+## Integrantes
+
+| Nome | RM |
+|---|---|
+| Luan de Araujo Carneiro | 573691 |
+| Pedro Sampaio Mochnacs Arruda | 573522 |
+| Raul Sampaio Mochnacs Arruda | 573523 |
+| Pedro Ribeiro Lopes | 570083 |
+| Kevin Rodrigues de Melo | 571777 |
+| Pedro Vianna | 570747 |
+
 ## Como foi feito
 
 Os dados vêm de bases públicas de energia (UCI e Kaggle). Cada amostra foi antes
