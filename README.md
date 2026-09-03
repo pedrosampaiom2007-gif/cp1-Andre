@@ -29,6 +29,8 @@ consulta uma API pública.
 
 ## `CP1_ori.ipynb`
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pedrosampaiom2007-gif/cp1-Andre/blob/main/CP1_ori.ipynb)
+
 São seis exercícios, todos seguindo a mesma ideia: carregar a amostra, olhar a
 estrutura (`shape`, `head`, `info`, `describe`), renomear as colunas para nomes
 mais claros, definir um limiar como uma porcentagem do valor máximo de uma
@@ -55,6 +57,8 @@ Os datasets usados, na ordem dos exercícios:
    de uma casa; potência ativa alta cruzada com corrente acima da média.
 
 ## `Desafio_Final_Energia_ONS_API_Final.ipynb`
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pedrosampaiom2007-gif/cp1-Andre/blob/main/Desafio_Final_Energia_ONS_API_Final.ipynb)
 
 Análise da carga elétrica do Sistema Interligado Nacional a partir da API pública
 de Carga Verificada do **ONS** (`apicarga.ons.org.br`). Foi usada a área **SP**,
