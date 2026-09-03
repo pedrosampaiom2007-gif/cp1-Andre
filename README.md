@@ -81,14 +81,12 @@ O notebook está organizado em desafios numerados:
   indicadores dos desafios anteriores (região, período, nº de registros, mínimo,
   máximo, média, mediana, limiar e percentual de alta demanda, momento do pico e
   o resultado do segundo critério), pronta para o relatório.
-- **Desafio 8** — relatório técnico gerado a partir de `resumo_resultados`,
-  cobrindo caracterização do conjunto, indicadores, análise da alta demanda,
-  comparação com o segundo critério e conclusão, sem inventar causas para as
-  variações observadas.
-- **Desafio 9** — validação crítica do relatório gerado: confere se os
-  indicadores foram usados corretamente, se há afirmações sem respaldo nos
-  dados e se houve causalidade não demonstrada, e registra os ajustes feitos
-  até a versão final revisada pela equipe.
+- **Desafio 8** — um prompt monta o pedido de relatório técnico a partir de
+  `resumo_resultados` e envia pra API do Gemini, pedindo pra não inventar
+  causas e diferenciar observação de hipótese.
+- **Desafio 9** — validação crítica do texto gerado pela IA (indicadores
+  usados corretamente, afirmações sem respaldo nos dados, causalidade não
+  demonstrada) e a versão final do relatório, revisada pela equipe.
 
 Todos os desafios (1 a 9) estão resolvidos no notebook.
 
